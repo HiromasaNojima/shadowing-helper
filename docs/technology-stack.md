@@ -75,6 +75,7 @@ shadowing-helper/
 ├── public/                  # 静的ファイル
 ├── docs/                    # ドキュメント
 ├── package.json
+├── yarn.lock              # Yarnのロックファイル
 ├── tsconfig.json
 ├── tailwind.config.ts
 ├── next.config.js
@@ -174,14 +175,20 @@ interface SectionStore {
 
 ## 4. 開発環境設定
 
+### パッケージマネージャー
+- **Yarn** を使用
+  - 高速なインストール
+  - 厳密な依存関係管理
+  - ワークスペース機能のサポート
+
 ### 必要なパッケージのインストール
 ```bash
 # Next.js プロジェクトの作成
-npx create-next-app@latest shadowing-helper --typescript --tailwind --app
+npx create-next-app@latest shadowing-helper --typescript --tailwind --app --use-yarn
 
 # 追加パッケージのインストール
-npm install zustand
-npm install @types/youtube
+yarn add zustand
+yarn add -D @types/youtube
 
 # shadcn/ui のセットアップ
 npx shadcn@latest init
